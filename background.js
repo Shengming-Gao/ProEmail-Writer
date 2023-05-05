@@ -6,7 +6,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": "Bearer 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"
+                "Authorization": "Bearer "
             },
             body: JSON.stringify({
                 prompt: request.prompt,
