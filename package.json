@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "openai": "^3.2.1"
+  },
+  "name": "proemail-writer",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "background.js",
+  "scripts": {
+    "dev": "node script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shengming-Gao/ProEmail-Writer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shengming-Gao/ProEmail-Writer/issues"
+  },
+  "homepage": "https://github.com/Shengming-Gao/ProEmail-Writer#readme",
+  "description": ""
+}

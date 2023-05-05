@@ -3,6 +3,10 @@
 document.getElementById("generate-btn").addEventListener("click", function() {
     var prompt = document.getElementById("input").value;
     chrome.runtime.sendMessage({action: "generate", prompt: prompt}, function(response) {
-        document.getElementById("output").innerText = response.text;
+        if (response && response.text) {
+            document.getElementById("output").innerText = response.text;
+        } else {
+            console.error("Error: Invalid response from background script");
+        }
     });
 });
