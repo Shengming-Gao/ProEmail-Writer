@@ -8,14 +8,23 @@ const openai = new OpenAIApi(new Configuration({
     apiKey: process.env.API_KEY
 }))
 
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse){
+    console.log("background.js");
+    console.log(request);
+    console.log(sender);
+    sendResponse("bar");
+  }
+)
 chrome.runtime.onMessage.addListener(async function(request, sender, sendResponse) {
-    console.log("Hi")
+    console.log("it works")
     if (request.action == "generate") {
       try {
         const completion = await openai.createChatCompletion({
           model: "gpt-3.5-turbo",
           messages: [{role: "user", content: "Hello world"}],
         });
+
         sendResponse({text: "An error occurred while generating text."});
         // sendResponse({text: completion.data.choices[0].message.content});
       } catch (error) {
